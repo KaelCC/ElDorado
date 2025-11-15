@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="566.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.MainViewController">
+   <children>
+      <AnchorPane prefHeight="566.0" prefWidth="273.0" style="-fx-background-color: FFF4A6;" />
+      <Label fx:id="lblBienvenido" layoutX="22.0" layoutY="14.0" prefHeight="63.0" prefWidth="502.0" text="BIENVENID@, &quot;PLACEHOLDER&quot; ">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="27.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
