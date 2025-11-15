@@ -13,10 +13,11 @@ import java.awt.event.ActionEvent;
 public class MainViewController {
     private ElDorado elDorado;
     @FXML
-    private MenuItem btnAgregarCuenta;
+    private MenuItem btnAgregarMonedero;
 
     @FXML
-    private MenuItem btnVerCuentas;
+    private MenuItem btnVerMonederos;
+
     @FXML
     private AnchorPane contentMain;
 
@@ -33,12 +34,12 @@ public class MainViewController {
         this.elDorado = elDorado;
     }
     @FXML
-    void AgregarCuenta(ActionEvent event) {
+    void AgregarMonedero(ActionEvent event) {
 
     }
 
     @FXML
-    void mostrarCuentas(ActionEvent event) {
+    void mostrarMonederos(ActionEvent event) {
 
     }
 }

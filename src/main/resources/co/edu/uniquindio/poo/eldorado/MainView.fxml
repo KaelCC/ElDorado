@@ -16,10 +16,10 @@
       <AnchorPane fx:id="contentMain" layoutX="225.0" layoutY="63.0" prefHeight="483.0" prefWidth="580.0" />
       <AnchorPane prefHeight="566.0" prefWidth="200.0" style="-fx-background-color: FFF4A6;">
          <children>
-            <MenuButton layoutX="45.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Cuentas">
+            <MenuButton layoutX="45.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Monederos">
               <items>
-                <MenuItem fx:id="btnVerCuentas" mnemonicParsing="false" onAction="#mostrarCuentas" text="Ver Cuentas" />
-                <MenuItem fx:id="btnAgregarCuenta" mnemonicParsing="false" onAction="#AgregarCuenta" text="Agregar Cuenta" />
+                <MenuItem fx:id="btnVerMonederos" mnemonicParsing="false" onAction="#mostrarMonederos" text="Ver Monederos" />
+                <MenuItem fx:id="btnAgregarMonedero" mnemonicParsing="false" onAction="#AgregarMonedero" text="Agregar Monedero" />
                   <MenuItem mnemonicParsing="false" text="Otra Opcion por si acaso" />
               </items>
             </MenuButton>
