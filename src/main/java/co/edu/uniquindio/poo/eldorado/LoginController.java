@@ -37,16 +37,39 @@ public class LoginController {
         Usuario usuario = elDorado.buscarUsuarioPorEmail(email);
 
         if (usuario == null) {
-            System.out.println("❌ Usuario no encontrado o no existe, revise los datos o regístrese.");
-            return; // Detiene el método para evitar el NullPointer
+            System.out.println("Usuario no encontrado o no existe, revise los datos o regístrese.");
+            return;
         }
 
         if (usuario.getPassword().equals(password)) {
-            System.out.println("✅ Inicio de sesión exitoso. Bienvenido " + usuario.getNombre());
+            System.out.println("Inicio de sesión exitoso. Bienvenido " + usuario.getNombre());
         } else {
-            System.out.println("⚠️ Contraseña incorrecta.");
+            System.out.println("Contraseña incorrecta.");
+            return;
+        }
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
+            Scene mainScene = new Scene(loader.load());
+
+            // ✔️ Obtener el controlador correcto
+            MainViewController mainController = loader.getController();
+
+            // ✔️ Pasarle el modelo y el usuario logueado
+            mainController.setElDorado(elDorado);
+            mainController.initUsuario(usuario);
+
+            // ✔️ Cambiar escena
+            Stage stage = (Stage) btnLogin.getScene().getWindow();
+            stage.setScene(mainScene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("❌ Error al cargar la vista de Main");
         }
     }
+
 
 
     private ElDorado elDorado;
@@ -78,7 +101,7 @@ public class LoginController {
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("❌ Error al cargar la vista de Registro");
+            System.out.println("Error al cargar la vista de Registro");
         }
     }
 

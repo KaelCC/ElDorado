@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="566.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.MainViewController">
    <children>
-      <AnchorPane prefHeight="566.0" prefWidth="273.0" style="-fx-background-color: FFF4A6;" />
-      <Label fx:id="lblBienvenido" layoutX="22.0" layoutY="14.0" prefHeight="63.0" prefWidth="502.0" text="BIENVENID@, &quot;PLACEHOLDER&quot; ">
+      <Label fx:id="lblBienvenido" layoutX="211.0" prefHeight="63.0" prefWidth="502.0" text="BIENVENID@, &quot;PLACEHOLDER&quot; ">
          <font>
             <Font name="Copperplate Gothic Bold" size="27.0" />
          </font>
       </Label>
+      <AnchorPane fx:id="contentMain" layoutX="225.0" layoutY="63.0" prefHeight="483.0" prefWidth="580.0" />
+      <AnchorPane prefHeight="566.0" prefWidth="200.0" style="-fx-background-color: FFF4A6;">
+         <children>
+            <MenuButton layoutX="45.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Cuentas">
+              <items>
+                <MenuItem fx:id="btnVerCuentas" mnemonicParsing="false" onAction="#mostrarCuentas" text="Ver Cuentas" />
+                <MenuItem fx:id="btnAgregarCuenta" mnemonicParsing="false" onAction="#AgregarCuenta" text="Agregar Cuenta" />
+                  <MenuItem mnemonicParsing="false" text="Otra Opcion por si acaso" />
+              </items>
+            </MenuButton>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
