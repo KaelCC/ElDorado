@@ -100,6 +100,7 @@ public class Usuario {
             throw new IllegalArgumentException("La cuenta no puede ser nula");
         }
         listaCuentas.add(cuenta);
+
     }
 
     public Cuenta buscarCuentaPorId(String idCuenta) {

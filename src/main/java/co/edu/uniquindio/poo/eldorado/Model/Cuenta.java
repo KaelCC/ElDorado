@@ -95,4 +95,5 @@ public class Cuenta {
         this.puntos = puntos;
         actualizarRango();
     }
+
 }

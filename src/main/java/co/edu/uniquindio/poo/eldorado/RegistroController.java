@@ -2,6 +2,7 @@ package co.edu.uniquindio.poo.eldorado;
 
 import co.edu.uniquindio.poo.eldorado.Model.Cuenta;
 import co.edu.uniquindio.poo.eldorado.Model.ElDorado;
+import co.edu.uniquindio.poo.eldorado.Model.Notificar;
 import co.edu.uniquindio.poo.eldorado.Model.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static co.edu.uniquindio.poo.eldorado.RegistroApplication.notificar;
 
 public class RegistroController {
 
@@ -43,9 +46,6 @@ public class RegistroController {
     @FXML
     private TextField txttelefono;
 
-
-
-
     @FXML
     void RegistrarUsuario(ActionEvent event) {
         String nombre = txtNombre.getText();
@@ -64,6 +64,8 @@ public class RegistroController {
         System.out.println("Cuenta agregada al usuario");
         elDorado.registrarCuenta( cuentaBasica );
         System.out.println("Cuenta agregada al dorado");
+        String mensaje = "";
+        enviarNotificacion(usuario,mensaje);
     }
 
 
@@ -94,4 +96,34 @@ private ElDorado  elDorado;
     public void setElDorado(ElDorado elDorado) {
         this.elDorado = elDorado;
     }
+
+
+    public void start(Stage stage) throws IOException {
+
+
+        notificar = new Notificar("https://m3rxp6.api.infobip.com",
+                "994ac6e62cc70d529a0bc68c0ed573ec-1fc46e8b-204b-4380-ab0a-9640be69fee4");
+        FXMLLoader fxmlLoader = new FXMLLoader(RegistroApplication.class.getResource("RegistroViewPrueba.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+
+        RegistroController controller = fxmlLoader.getController();
+        controller.setElDorado(elDorado);
+
+        stage.setTitle("Registro");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void enviarNotificacion(Usuario usuario, String mensaje) {
+        try {
+            String numero=usuario.getTelefono();
+            String respuesta = notificar.enviarSms(numero,mensaje);
+
+            System.out.println("Respuesta Infobip: " + respuesta);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }
