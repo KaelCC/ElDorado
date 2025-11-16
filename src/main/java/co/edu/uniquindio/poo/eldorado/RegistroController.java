@@ -86,7 +86,7 @@ public class RegistroController {
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("❌ Error al cargar la vista de Login");
+            System.out.println(" Error al cargar la vista de Login");
         }
     }
 

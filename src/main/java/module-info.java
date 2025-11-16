@@ -3,8 +3,10 @@ module co.edu.uniquindio.poo.eldorado {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.desktop;
+    requires java.sql;
 
 
     opens co.edu.uniquindio.poo.eldorado to javafx.fxml;
+    opens co.edu.uniquindio.poo.eldorado.Model to javafx.base, javafx.fxml; //
     exports co.edu.uniquindio.poo.eldorado;
 }
