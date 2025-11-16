@@ -20,6 +20,9 @@ import java.io.IOException;
 public class MainViewController {
     private ElDorado elDorado;
     @FXML
+    private Button btnProgramar;
+
+    @FXML
     private Button btnDepositar;
     @FXML
     private Button btnLogOut;
@@ -158,5 +161,19 @@ public class MainViewController {
             System.out.println(" Error al cargar la vista de Login");
         }
     }
+    @FXML
+    void MostrarProgramar(ActionEvent event) {
+try {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("TransaccionProgramadaView.fxml"));
+    AnchorPane pane = loader.load();
+    TransaccionProgramadaController controller = loader.getController();
+    controller.setElDorado(elDorado);
+    controller.setUsuarioActual(usuarioActual);
+    contentMain.getChildren().setAll(pane);
+} catch(Exception e) {
+    e.printStackTrace();
+        }
+    }
+
 }
 

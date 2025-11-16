@@ -1,20 +1,23 @@
 package co.edu.uniquindio.poo.eldorado.Model;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ElDorado {
     private String nombre;
     private List<Usuario> listaUsuarios;
     private List<Cuenta> listaCuentas;
+    private List<TransaccionProgramada> listaTransaccionProgramadas;
 
     public ElDorado(String nombre) {
         if (nombre == null || nombre.isEmpty()) {
             throw new IllegalArgumentException("El nombre no puede ser nulo o vacío");
         }
         this.nombre = nombre;
-        this.listaUsuarios = new ArrayList<>();
-        this.listaCuentas = new ArrayList<>();
+        this.listaUsuarios = new LinkedList<>();
+        this.listaCuentas = new LinkedList<>();
+        this.listaTransaccionProgramadas = new LinkedList<>();
     }
 
     public void registrarUsuario(Usuario usuario) {
@@ -69,5 +72,17 @@ public class ElDorado {
             throw new IllegalArgumentException("El nombre no puede ser nulo o vacío");
         }
         this.nombre = nombre;
+    }
+
+    public void agregarTransaccionProgramada(TransaccionProgramada transaccionProgramada) {
+  listaTransaccionProgramadas.add(transaccionProgramada);
+    }
+
+    public List<TransaccionProgramada> getListaTransaccionProgramadas() {
+        return listaTransaccionProgramadas;
+    }
+
+    public void setListaTransaccionProgramadas(List<TransaccionProgramada> listaTransaccionProgramadas) {
+        this.listaTransaccionProgramadas = listaTransaccionProgramadas;
     }
 }

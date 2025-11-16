@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.TransaccionProgramadaController">
+   <children>
+      <Label layoutX="33.0" layoutY="32.0" prefHeight="36.0" prefWidth="419.0" text="PROGRAMAR TRANSACCION ">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="100.0" prefHeight="36.0" prefWidth="254.0" text="MONEDERO DE ORIGEN: ">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choiceBoxMonedero" layoutX="339.0" layoutY="106.0" prefHeight="26.0" prefWidth="182.0" />
+      <TextField fx:id="txtTransaccion" layoutX="339.0" layoutY="162.0" prefHeight="26.0" prefWidth="182.0" />
+      <Label layoutX="33.0" layoutY="157.0" prefHeight="36.0" prefWidth="286.0" text="Monto de la transaccion:">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="datePickerFecha" layoutX="339.0" layoutY="227.0" prefHeight="26.0" prefWidth="182.0" />
+      <Label layoutX="25.0" layoutY="222.0" prefHeight="36.0" prefWidth="286.0" text="elija la fecha de la transaccion">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCuentaDestino" layoutX="339.0" layoutY="320.0" prefHeight="26.0" prefWidth="182.0" promptText="solo si es transferencia" />
+      <Label layoutX="25.0" layoutY="315.0" prefHeight="36.0" prefWidth="286.0" text="elija la cuenta de destino ">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="15.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="choiceBoxTipoTransaccion" layoutX="339.0" layoutY="276.0" prefHeight="26.0" prefWidth="182.0" />
+      <Label layoutX="25.0" layoutY="271.0" prefHeight="36.0" prefWidth="286.0" text="Elija el tipo de transaccion">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnProgramar" layoutX="225.0" layoutY="351.0" mnemonicParsing="false" onAction="#programar" prefHeight="26.0" prefWidth="113.0" text="Programar" />
+   </children>
+</AnchorPane>

@@ -28,6 +28,7 @@
             <Button fx:id="btnDepositar" layoutX="44.0" layoutY="210.0" mnemonicParsing="false" onAction="#MostrarVistaDeposito" prefHeight="26.0" prefWidth="110.0" text="Depositar" />
             <Button fx:id="btnTransferir" layoutX="45.0" layoutY="293.0" mnemonicParsing="false" onAction="#MostrarVistaTransferencia" prefHeight="26.0" prefWidth="110.0" text="Transferir" />
             <Button fx:id="btnLogOut" layoutX="18.0" layoutY="527.0" mnemonicParsing="false" onAction="#LogOut" text="Log out" />
+            <Button fx:id="btnProgramar" layoutX="46.0" layoutY="358.0" mnemonicParsing="false" onAction="#MostrarProgramar" prefHeight="26.0" prefWidth="110.0" text="Programar" />
          </children>
       </AnchorPane>
    </children>
