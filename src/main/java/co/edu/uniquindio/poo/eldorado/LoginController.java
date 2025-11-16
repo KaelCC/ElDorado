@@ -52,21 +52,18 @@ public class LoginController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
             Scene mainScene = new Scene(loader.load());
 
-            // ✔️ Obtener el controlador correcto
             MainViewController mainController = loader.getController();
 
-            // ✔️ Pasarle el modelo y el usuario logueado
             mainController.setElDorado(elDorado);
             mainController.initUsuario(usuario);
 
-            // ✔️ Cambiar escena
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.setScene(mainScene);
             stage.show();
 
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("❌ Error al cargar la vista de Main");
+            System.out.println(" Error al cargar la vista de Main");
         }
     }
 
@@ -88,13 +85,10 @@ public class LoginController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("RegistroViewPrueba.fxml"));
             Scene registroScene = new Scene(loader.load());
 
-            // 🔹 Obtener el controlador del Registro
             RegistroController registroController = loader.getController();
 
-            // 🔹 Pasarle la MISMA instancia del modelo
             registroController.setElDorado(elDorado);
 
-            // 🔹 Cambiar la escena
             Stage stage = (Stage) btnRegistrar.getScene().getWindow();
             stage.setScene(registroScene);
             stage.show();
