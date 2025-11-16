@@ -99,22 +99,8 @@ public class MainViewController {
 
     @FXML
     void MostrarVistaRetiro(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("RetiroView.fxml"));
-            AnchorPane pane = loader.load();
 
-           RetiroController controller = loader.getController();
-            controller.setElDorado(elDorado);
-            controller.setUsuarioActual(usuarioActual);
-
-            contentMain.getChildren().setAll(pane);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
-
-
 
     @FXML
     void MostrarVistaTransferencia(ActionEvent event) {
