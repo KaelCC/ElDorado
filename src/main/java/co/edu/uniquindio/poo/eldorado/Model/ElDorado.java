@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ElDorado {
     private String nombre;
-    private List<Usuario> listaUsuarios;
+    private static List<Usuario> listaUsuarios;
     private List<Cuenta> listaCuentas;
     private List<TransaccionProgramada> listaTransaccionProgramadas;
 
@@ -34,7 +34,7 @@ public class ElDorado {
         listaCuentas.add(cuenta);
     }
 
-    public Usuario buscarUsuarioPorNombre(String nombre) {
+    public static Usuario buscarUsuarioPorNombre(String nombre) {
         for (Usuario u : listaUsuarios) {
             if (u.getNombre().equalsIgnoreCase(nombre)) {
                 return u;
@@ -42,7 +42,7 @@ public class ElDorado {
         }
         return null;
     }
-    public Usuario buscarUsuarioPorEmail(String email){
+    public  Usuario buscarUsuarioPorEmail(String email){
         return listaUsuarios.stream().filter(u -> u.getEmail().equalsIgnoreCase(email)).findFirst().orElse(null);
     }
 
@@ -55,7 +55,7 @@ public class ElDorado {
         return null;
     }
 
-    public List<Usuario> getListaUsuarios() {
+    public  static List<Usuario> getListaUsuarios() {
         return listaUsuarios;
     }
 

@@ -2,6 +2,8 @@ package co.edu.uniquindio.poo.eldorado.Model;
 
 import java.time.LocalDate;
 
+import static co.edu.uniquindio.poo.eldorado.RegistroController.enviarNotificacion;
+
 public class Deposito extends Transaccion {
 
     private Monedero monederoDestino;
@@ -25,8 +27,13 @@ public class Deposito extends Transaccion {
 
         monederoDestino.agregarTransaccion(this);
 
+
+
         int puntosGanados = (int) (getMonto() / 100) * 1; // 1 punto por cada 100 unidades
         monederoDestino.getCuenta().agregarPuntos(puntosGanados);
+
+        Usuario usuario = monederoDestino.getCuenta().getPropietario();
+        enviarNotificacion(usuario,"Su deposito ah sido exitoso");
     }
 
     public Monedero getMonederoDestino() {

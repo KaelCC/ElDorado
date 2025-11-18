@@ -95,8 +95,5 @@ public class Cuenta {
         this.puntos = puntos;
         actualizarRango();
     }
-    public String generarIdMonedero() {
-        int cantidad = listaMonederos.size() + 1;
-        return "MON-" + cantidad;
-    }
+
 }

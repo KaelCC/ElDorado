@@ -98,7 +98,8 @@ public void setCuenta(Cuenta cuenta) {
         if (cuenta == null) {
             throw new IllegalArgumentException("La cuenta no puede ser nula");
         }
-        setCuenta(cuenta);
+        listaCuentas.add(cuenta);
+
     }
 
 
