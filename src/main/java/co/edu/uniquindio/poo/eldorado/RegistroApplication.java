@@ -1,4 +1,6 @@
 package co.edu.uniquindio.poo.eldorado;
+import co.edu.uniquindio.poo.eldorado.Model.Notificar;
+import co.edu.uniquindio.poo.eldorado.Model.Usuario;
 import co.edu.uniquindio.poo.eldorado.RegistroController;
 import co.edu.uniquindio.poo.eldorado.Model.ElDorado;
 import javafx.application.Application;
@@ -9,10 +11,13 @@ import java.io.IOException;
 
 public class RegistroApplication extends Application {
     private ElDorado elDorado = new ElDorado("El Dorado Bank");
+    private static Notificar notificar;
 
 
     @Override
     public void start(Stage stage) throws IOException {
+        notificar = new Notificar("https://m3rxp6.api.infobip.com",
+                "994ac6e62cc70d529a0bc68c0ed573ec-1fc46e8b-204b-4380-ab0a-9640be69fee4");
         FXMLLoader fxmlLoader = new FXMLLoader(RegistroApplication.class.getResource("RegistroViewPrueba.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
@@ -24,8 +29,20 @@ public class RegistroApplication extends Application {
         stage.show();
     }
 
+    public static void enviarNotificacion(Usuario usuario, String mensaje) {
+        try {
+            String numero=usuario.getTelefono();
+            String respuesta = notificar.enviarSms(numero,mensaje);
+
+            System.out.println("Respuesta Infobip: " + respuesta);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
         launch(args);
     }
+
 
 }

@@ -25,6 +25,9 @@ public class Retiro extends Transaccion {
         monederoOrigen.retirar(getMonto());
         monederoOrigen.agregarTransaccion(this);
 
+        int puntosGanados = (int) (getMonto() / 100) * 2; // 1 punto por cada 100 unidades
+        monederoOrigen.getCuenta().agregarPuntos(puntosGanados);
+
     }
 
     public Monedero getMonederoOrigen() {

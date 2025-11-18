@@ -59,6 +59,9 @@ private ElDorado elDorado;
             Deposito deposito = new Deposito(idTransaccion, LocalDate.now(), monto, seleccionado);
             deposito.ejecutar();
 
+            Usuario usuario = elDorado.buscarUsuarioPorEmail(usuarioActual.getEmail());
+            RegistroApplication.enviarNotificacion(usuario,"Su deposito ah sido exitoso");
+
             System.out.println("Depósito realizado. Nuevo saldo: " + seleccionado.getSaldo());
 
 

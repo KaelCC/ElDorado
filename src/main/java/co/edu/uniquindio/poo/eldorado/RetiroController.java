@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import java.time.LocalDate;
 import java.util.UUID;
 
+
 public class RetiroController {
     private ElDorado elDorado;
     private Usuario usuarioActual;
@@ -55,6 +56,9 @@ public class RetiroController {
 
             Retiro retiro = new Retiro(UUID.randomUUID().toString(), LocalDate.now(), monto, seleccionado);
             retiro.ejecutar();
+
+            Usuario usuario = elDorado.buscarUsuarioPorEmail(usuarioActual.getEmail());
+            RegistroApplication.enviarNotificacion(usuario,"Su retiro ah sido exitoso");
 
             System.out.println("Retiro realizado. Nuevo saldo: " + seleccionado.getSaldo());
 

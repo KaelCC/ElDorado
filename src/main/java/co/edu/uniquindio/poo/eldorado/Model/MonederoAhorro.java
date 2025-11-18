@@ -10,13 +10,5 @@ public class MonederoAhorro extends Monedero {
 public String getTipo(){
         return "ahorro";
 }
-    @Override
-    public void depositar(double monto) {
-        if (monto <= 0) {
-            throw new IllegalArgumentException("El monto debe ser mayor a 0");
-        }
 
-        double bonificacion = monto * 0.02; // 2% extra por depósito
-        saldo += monto + bonificacion;
-    }
 }

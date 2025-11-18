@@ -1,7 +1,11 @@
 package co.edu.uniquindio.poo.eldorado.Model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import static co.edu.uniquindio.poo.eldorado.Model.Rango.*;
 
 public class Cuenta {
 
@@ -21,7 +25,7 @@ public class Cuenta {
         this.propietario = propietario;
         this.listaMonederos = new ArrayList<>();
         this.puntos = puntosIniciales;
-        this.rango = Rango.BRONCE; // ✅ Inicializa con un rango por defecto
+        this.rango = BRONCE; // ✅ Inicializa con un rango por defecto
     }
 
 
@@ -34,15 +38,17 @@ public class Cuenta {
 
 
     public void actualizarRango() {
-        if (puntos <= 500) {
-            rango = Rango.BRONCE;
-        } else if (puntos <= 1000) {
-            rango = Rango.PLATA;
-        } else if (puntos <= 5000) {
-            rango = Rango.ORO;
+        if (puntos <= 500 && puntos >0) {
+            rango = BRONCE;
+        } else if (puntos <= 1000 && puntos > 500) {
+            rango = PLATA;
+        } else if (puntos <= 5000 && puntos >1000) {
+            rango = ORO;
         } else {
             rango = Rango.PLATINO;
         }
+
+
     }
 
 
@@ -99,4 +105,63 @@ public class Cuenta {
         int cantidad = listaMonederos.size() + 1;
         return "MON-" + cantidad;
     }
+    public class Recompensa {
+        String nombre;
+        public int costoPuntos;
+        public Runnable accion; // lo que hace la recompensa
+
+        Recompensa(String nombre, int costoPuntos, Runnable accion) {
+            this.nombre = nombre;
+            this.costoPuntos = costoPuntos;
+            this.accion = accion;
+        }
+    }
+
+
+    public List<Recompensa> getRecompensas() {
+        List<Recompensa> lista = new ArrayList<>();
+
+        switch (rango) {
+
+            case BRONCE:
+                lista.add(new Recompensa(
+                        "Bono +$50",
+                        1000,
+                        () -> agregarDinero(50)
+                ));
+                break;
+
+            case PLATA:
+                lista.add(new Recompensa(
+                        "Bono +$100",
+                        2000,
+                        () -> agregarDinero(100)
+                ));
+                break;
+
+            case ORO:
+                lista.add(new Recompensa(
+                        "Bono +$500",
+                        4500,
+                        () -> agregarDinero(500)
+                ));
+                break;
+
+            case PLATINO:
+                lista.add(new Recompensa(
+                        "Bono +$1000",
+                        10000,
+                        () -> agregarDinero(1000)
+                ));
+                break;
+        }
+
+        return lista;
+    }
+
+    private void agregarDinero(double cantidad) {
+        System.out.println("Se agregaron $" + cantidad + " al usuario.");
+    }
+
+
 }

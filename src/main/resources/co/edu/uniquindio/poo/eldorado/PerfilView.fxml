@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="552.0" prefWidth="629.0" style="-fx-background-color: #f2f2f2;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.PerfilController">
+
+    <children>
+
+        <VBox layoutX="51.0" layoutY="21.0" prefHeight="514.0" prefWidth="526.0" spacing="20" style="-fx-background-color: white;                      -fx-background-radius: 16;                      -fx-padding: 25;                      -fx-effect: dropshadow(gaussian, #aaaaaa, 20, 0.25, 0, 4);">
+
+            <!-- TÍTULO PERFIL -->
+            <Label text="PERFIL DEL USUARIO" textFill="#b8860b">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="28" />
+                </font>
+            </Label>
+
+
+            <VBox spacing="10" style="-fx-padding: 15;                                       -fx-background-color: #fafafa;                                       -fx-background-radius: 12;                                       -fx-border-color: #d4af37;                                       -fx-border-radius: 12;                                       -fx-border-width: 2;">
+
+                <Label fx:id="labelNombre" text="Nombre: " textFill="#444">
+                    <font><Font size="18" /></font>
+                </Label>
+
+                <Label fx:id="labelCedula" text="Cédula: " textFill="#444">
+                    <font><Font size="18" /></font>
+                </Label>
+
+                <Label fx:id="labelCorreo" text="Correo: " textFill="#444">
+                    <font><Font size="18" /></font>
+                </Label>
+
+
+                <Label fx:id="labelCuentaId" text="ID de la Cuenta: " textFill="#444">
+                    <font><Font size="18" /></font>
+                </Label>
+
+                <Label fx:id="labelPuntos" text="Puntos: " textFill="#b8860b">
+                    <font><Font size="20" /></font>
+                </Label>
+            <Label fx:id="labelRango" text="Rango: " textFill="#b8860b">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+
+            </VBox>
+
+
+            <Label text="Transacciones Recientes" textFill="#b8860b">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="22" />
+                </font>
+            </Label>
+
+
+            <TableView fx:id="tableTransacciones" prefHeight="290.0" prefWidth="598.0" style="-fx-background-color: white;                               -fx-background-radius: 10;                               -fx-border-color: #d4af37;                               -fx-border-width: 2;                               -fx-border-radius: 10;">
+                <columns>
+                    <TableColumn fx:id="colFecha" prefWidth="160" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="FECHA" />
+
+                    <TableColumn fx:id="colDescripcion" prefWidth="152.8000030517578" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="DESCRIPCIÓN" />
+
+                    <TableColumn fx:id="colMonto" prefWidth="158.4000244140625" style="-fx-alignment: CENTER; -fx-font-weight: bold;" text="MONTO" />
+                </columns>
+            </TableView>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

@@ -25,8 +25,11 @@ public class Deposito extends Transaccion {
 
         monederoDestino.agregarTransaccion(this);
 
+
+
         int puntosGanados = (int) (getMonto() / 100) * 1; // 1 punto por cada 100 unidades
         monederoDestino.getCuenta().agregarPuntos(puntosGanados);
+
     }
 
     public Monedero getMonederoDestino() {

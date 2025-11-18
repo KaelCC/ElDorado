@@ -7,70 +7,111 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.RegistroController">
-   <children>
-      <AnchorPane layoutY="-1.0" prefHeight="400.0" prefWidth="198.0" style="-fx-background-color: FFF4A6;">
-         <children>
-            <Button fx:id="btnRegistrar" layoutX="37.0" layoutY="300.0" mnemonicParsing="false" onAction="#RegistrarUsuario" prefHeight="43.0" prefWidth="123.0" text="REGISTRAR" />
-            <Label layoutX="14.0" layoutY="82.0" prefHeight="26.0" prefWidth="139.0" text="ya tienes cuenta? ">
-               <font>
-                  <Font name="Copperplate Gothic Bold" size="12.0" />
-               </font>
-            </Label>
-            <Button fx:id="btnLogin" layoutX="14.0" layoutY="108.0" mnemonicParsing="false" onAction="#IrALogin" text="inicia sesion aqui" />
-         </children>
-      </AnchorPane>
-      <Label layoutX="28.0" layoutY="14.0" prefHeight="58.0" prefWidth="428.0" text="BIENVENIDO A EL DORADO " textOverrun="CLIP">
-         <font>
-            <Font name="Cooper Black" size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="198.0" layoutY="58.0" prefHeight="43.0" prefWidth="186.0" text="REGISTRESE AQUI: ">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtNombre" layoutX="285.0" layoutY="105.0" prefHeight="22.0" prefWidth="288.0" promptText="ingrese su nombre " />
-      <Label layoutX="198.0" layoutY="105.0" prefHeight="26.0" prefWidth="87.0" text="NOMBRE: ">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="198.0" layoutY="145.0" prefHeight="26.0" prefWidth="87.0" text="APELLIDO:">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtApellido" layoutX="285.0" layoutY="145.0" prefHeight="22.0" prefWidth="288.0" promptText="ingrese su apellido" />
-      <Label layoutX="198.0" layoutY="187.0" prefHeight="26.0" prefWidth="87.0" text="EMAIL:">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtEmail" layoutX="285.0" layoutY="187.0" prefHeight="22.0" prefWidth="288.0" promptText="Example@gmail.com" />
-      <Label layoutX="198.0" layoutY="227.0" prefHeight="26.0" prefWidth="87.0" text="Telefono: ">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txttelefono" layoutX="285.0" layoutY="227.0" prefHeight="22.0" prefWidth="288.0" promptText="123456789" />
-      <Label layoutX="198.0" layoutY="263.0" prefHeight="26.0" prefWidth="87.0" text="Cedula: ">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtCedula" layoutX="285.0" layoutY="263.0" prefHeight="22.0" prefWidth="288.0" promptText="987654321" />
-      <Label layoutX="198.0" layoutY="299.0" prefHeight="26.0" prefWidth="87.0" text="edad:">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="txtEdad" layoutX="285.0" layoutY="299.0" prefHeight="22.0" prefWidth="288.0" promptText="21" />
-      <Label layoutX="198.0" layoutY="336.0" prefHeight="26.0" prefWidth="98.0" text="PASSWORD:">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="11.0" />
-         </font>
-      </Label>
-      <PasswordField fx:id="txtPassword" layoutX="285.0" layoutY="336.0" prefHeight="26.0" prefWidth="288.0" promptText="MagicUnicorn294" />
-   </children>
+<AnchorPane prefHeight="430.0" prefWidth="650.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.eldorado.RegistroController"
+            style="-fx-background-color: #FFFFFF; -fx-border-color: #C7A008; -fx-border-width: 3px;">
+
+    <children>
+
+        <!-- LATERAL IZQUIERDO -->
+        <AnchorPane prefHeight="430.0" prefWidth="180.0"
+                    style="-fx-background-color: linear-gradient(to bottom, #8A6D2F, #8F7404);">
+            <children>
+
+                <Label text="¿Ya tienes cuenta?"
+                       layoutX="25" layoutY="110"
+                       textFill="white">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="14" />
+                    </font>
+                </Label>
+
+                <Button fx:id="btnLogin"
+                        layoutX="25" layoutY="140"
+                        text="Inicia sesión"
+                        style="-fx-background-color: white; -fx-text-fill: #8F7404; -fx-font-weight: bold; -fx-background-radius: 8;"
+                        onAction="#IrALogin"
+                        prefWidth="130"/>
+
+                <Button fx:id="btnRegistrar"
+                        layoutX="25" layoutY="330"
+                        text="REGISTRAR"
+                        style="-fx-background-color: #FFFFFF; -fx-text-fill: #8F7404; -fx-font-weight: bold; -fx-background-radius: 10;"
+                        onAction="#RegistrarUsuario"
+                        prefWidth="130" prefHeight="40"/>
+            </children>
+        </AnchorPane>
+
+
+        <!-- TÍTULO PRINCIPAL -->
+        <Label layoutX="200" layoutY="15"
+               text="EL DORADO"
+               style="-fx-text-fill: #C7A008;">
+            <font>
+                <Font name="Cooper Black" size="34"/>
+            </font>
+        </Label>
+
+        <Label layoutX="200" layoutY="60"
+               text="CREA TU CUENTA"
+               style="-fx-text-fill: #2E2E2E;">
+            <font>
+                <Font name="Segoe UI Semibold" size="18"/>
+            </font>
+        </Label>
+
+
+        <!-- CAMPOS -->
+
+        <Label layoutX="200" layoutY="110" text="Nombre:"/>
+        <TextField fx:id="txtNombre"
+                   layoutX="280" layoutY="110"
+                   prefWidth="320"
+                   style="-fx-background-color: #F2F2F2; -fx-background-radius: 8;"
+                   promptText="Escribe tu nombre"/>
+
+        <Label layoutX="200" layoutY="150" text="Apellido:"/>
+        <TextField fx:id="txtApellido"
+                   layoutX="280" layoutY="150"
+                   prefWidth="320"
+                   style="-fx-background-color: #F2F2F2; -fx-background-radius: 8;"
+                   promptText="Escribe tu apellido"/>
+
+        <Label layoutX="200" layoutY="190" text="Email:"/>
+        <TextField fx:id="txtEmail"
+                   layoutX="280" layoutY="190"
+                   prefWidth="320"
+                   style="-fx-background-color: #F2F2F2; -fx-background-radius: 8;"
+                   promptText="correo@example.com"/>
+
+        <Label layoutX="200" layoutY="230" text="Teléfono:"/>
+        <TextField fx:id="txttelefono"
+                   layoutX="280" layoutY="230"
+                   prefWidth="320"
+                   style="-fx-background-color: #F2F2F2; -fx-background-radius: 8;"
+                   promptText="123456789"/>
+
+        <Label layoutX="200" layoutY="270" text="Cédula:"/>
+        <TextField fx:id="txtCedula"
+                   layoutX="280" layoutY="270"
+                   prefWidth="320"
+                   style="-fx-background-color: #F2F2F2; -fx-background-radius: 8;"
+                   promptText="Documento"/>
+
+        <Label layoutX="200" layoutY="310" text="Edad:"/>
+        <TextField fx:id="txtEdad"
+                   layoutX="280" layoutY="310"
+                   prefWidth="320"
+                   style="-fx-background-color: #F2F2F2; -fx-background-radius: 8;"
+                   promptText="21"/>
+
+        <Label layoutX="200" layoutY="350" text="Contraseña:"/>
+        <PasswordField fx:id="txtPassword"
+                       layoutX="280" layoutY="350"
+                       prefWidth="320"
+                       style="-fx-background-color: #F2F2F2; -fx-background-radius: 8;"
+                       promptText="••••••••"/>
+    </children>
 </AnchorPane>

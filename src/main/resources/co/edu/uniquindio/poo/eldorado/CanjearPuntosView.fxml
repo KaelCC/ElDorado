@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="750" prefHeight="550"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.eldorado.CanjearPuntosController"
+            style="-fx-background-color: #f2f2f2;">
+
+    <children>
+
+        <VBox spacing="25" layoutX="60" layoutY="40" prefWidth="630"
+              style="-fx-background-color: white;
+                     -fx-background-radius: 16;
+                     -fx-padding: 30;
+                     -fx-effect: dropshadow(gaussian, #aaaaaa, 20, 0.25, 0, 4);">
+
+            <!-- TÍTULO -->
+            <Label text="CANJE DE RECOMPENSAS" textFill="#b8860b">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="30"/>
+                </font>
+            </Label>
+
+            <!-- INFORMACIÓN DEL USUARIO -->
+            <HBox spacing="40"
+                  style="-fx-background-color: #fafafa;
+                         -fx-padding: 20;
+                         -fx-background-radius: 12;
+                         -fx-border-color: #d4af37;
+                         -fx-border-width: 2;
+                         -fx-border-radius: 12;">
+
+                <VBox spacing="10">
+                    <Label text="Puntos Disponibles:" textFill="#444">
+                        <font><Font size="18"/></font>
+                    </Label>
+
+                    <Label fx:id="labelPuntos" text="0"
+                           style="-fx-font-size: 26px; -fx-font-weight: bold;"
+                           textFill="#b8860b"/>
+                </VBox>
+
+                <VBox spacing="10">
+                    <Label text="Rango Actual:" textFill="#444">
+                        <font><Font size="18"/></font>
+                    </Label>
+
+                    <Label fx:id="labelRango" text="BRONCE"
+                           style="-fx-font-size: 24px; -fx-font-weight: bold;"
+                           textFill="#b8860b"/>
+                </VBox>
+
+            </HBox>
+
+            <!-- SUBTÍTULO -->
+            <Label text="Recompensas Disponibles" textFill="#b8860b">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="22"/>
+                </font>
+            </Label>
+
+            <!-- TABLA DE RECOMPENSAS -->
+            <TableView fx:id="tableRecompensas" prefHeight="300"
+                       style="-fx-background-color: white;
+                              -fx-background-radius: 10;
+                              -fx-border-color: #d4af37;
+                              -fx-border-width: 2;
+                              -fx-border-radius: 10;">
+
+                <columns>
+
+                    <TableColumn fx:id="colNombre" prefWidth="250" text="RECOMPENSA"
+                                 style="-fx-alignment: CENTER; -fx-font-weight: bold;"/>
+
+                    <TableColumn fx:id="colCosto" prefWidth="150" text="COSTO (PUNTOS)"
+                                 style="-fx-alignment: CENTER; -fx-font-weight: bold;"/>
+
+                    <TableColumn fx:id="colAccion" prefWidth="200" text="ACCIÓN"
+                                 style="-fx-alignment: CENTER; -fx-font-weight: bold;"/>
+
+                </columns>
+
+            </TableView>
+
+            <!-- BOTÓN REGRESAR -->
+            <Button fx:id="btnRegresar" text="REGRESAR"
+                    style="-fx-background-color: #cccccc;
+                           -fx-text-fill: #444;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 10;
+                           -fx-padding: 10 18;"
+                    prefWidth="150"/>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

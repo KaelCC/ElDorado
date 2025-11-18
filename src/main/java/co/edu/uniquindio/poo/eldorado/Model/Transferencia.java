@@ -38,7 +38,9 @@ public class Transferencia extends Transaccion {
         monederoDestino.agregarTransaccion(this);
 
         // 🏅 Agregar puntos al propietario (ejemplo: 1 punto por cada 200 transferidos)
-        int puntosGanados = (int) (getMonto() / 200);
+
+
+        int puntosGanados = (int) (getMonto() / 100) * 3; // 1 punto por cada 100 unidades
         monederoOrigen.getCuenta().agregarPuntos(puntosGanados);
     }
 

@@ -21,4 +21,5 @@ public class TransaccionProgramada {
     }
 
     public LocalDate getFechaEjecucion() { return fechaEjecucion; }
+    public boolean getEjecutada(){return ejecutada;}
 }

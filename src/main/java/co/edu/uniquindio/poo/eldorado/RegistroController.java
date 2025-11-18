@@ -1,7 +1,7 @@
 package co.edu.uniquindio.poo.eldorado;
-
 import co.edu.uniquindio.poo.eldorado.Model.Cuenta;
 import co.edu.uniquindio.poo.eldorado.Model.ElDorado;
+import co.edu.uniquindio.poo.eldorado.Model.Notificar;
 import co.edu.uniquindio.poo.eldorado.Model.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class RegistroController {
@@ -73,13 +72,10 @@ public class RegistroController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginView.fxml"));
             Scene loginScene = new Scene(loader.load());
 
-            // 🔹 Obtener el controlador del Login
             LoginController loginController = loader.getController();
 
-            // 🔹 Pasarle la MISMA instancia del modelo
             loginController.setElDorado(elDorado);
 
-            // 🔹 Cambiar la escena
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             stage.setScene(loginScene);
             stage.show();
@@ -89,9 +85,20 @@ public class RegistroController {
             System.out.println(" Error al cargar la vista de Login");
         }
     }
-
-private ElDorado  elDorado;
+    private ElDorado  elDorado;
     public void setElDorado(ElDorado elDorado) {
         this.elDorado = elDorado;
+    }
+public void start(Stage stage) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(RegistroApplication.class.getResource("RegistroViewPrueba.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+
+        RegistroController controller = fxmlLoader.getController();
+        controller.setElDorado(elDorado);
+
+        stage.setTitle("Registro");
+        stage.setScene(scene);
+        stage.show();
     }
 }

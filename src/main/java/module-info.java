@@ -4,6 +4,8 @@ module co.edu.uniquindio.poo.eldorado {
     requires javafx.graphics;
     requires java.desktop;
     requires java.sql;
+    requires jdk.httpserver;
+    requires okhttp3;
 
 
 

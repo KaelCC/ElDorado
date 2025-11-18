@@ -4,32 +4,69 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="566.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.MainViewController">
-   <children>
-      <Label fx:id="lblBienvenido" layoutX="211.0" prefHeight="63.0" prefWidth="502.0" text="BIENVENID@, &quot;PLACEHOLDER&quot; ">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="27.0" />
-         </font>
-      </Label>
-      <AnchorPane fx:id="contentMain" layoutX="225.0" layoutY="63.0" prefHeight="483.0" prefWidth="580.0" />
-      <AnchorPane prefHeight="566.0" prefWidth="200.0" style="-fx-background-color: FFF4A6;">
-         <children>
-            <MenuButton layoutX="45.0" layoutY="47.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="109.0" text="Monederos">
-              <items>
-                <MenuItem fx:id="btnVerMonederos" mnemonicParsing="false" onAction="#mostrarMonederos" text="Ver Monederos" />
-                <MenuItem fx:id="btnAgregarMonedero" mnemonicParsing="false" onAction="#AgregarMonedero" text="Agregar Monedero" />
-                  <MenuItem mnemonicParsing="false" text="Otra Opcion por si acaso" />
-              </items>
-            </MenuButton>
-            <Button fx:id="btnRetirar" layoutX="44.0" layoutY="128.0" mnemonicParsing="false" onAction="#MostrarVistaRetiro" prefHeight="26.0" prefWidth="110.0" text="Retirar" />
-            <Button fx:id="btnDepositar" layoutX="44.0" layoutY="210.0" mnemonicParsing="false" onAction="#MostrarVistaDeposito" prefHeight="26.0" prefWidth="110.0" text="Depositar" />
-            <Button fx:id="btnTransferir" layoutX="45.0" layoutY="293.0" mnemonicParsing="false" onAction="#MostrarVistaTransferencia" prefHeight="26.0" prefWidth="110.0" text="Transferir" />
-            <Button fx:id="btnLogOut" layoutX="18.0" layoutY="527.0" mnemonicParsing="false" onAction="#LogOut" text="Log out" />
-            <Button fx:id="btnProgramar" layoutX="46.0" layoutY="358.0" mnemonicParsing="false" onAction="#MostrarProgramar" prefHeight="26.0" prefWidth="110.0" text="Programar" />
-         </children>
-      </AnchorPane>
-   </children>
+<AnchorPane prefHeight="566.0" prefWidth="830.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.MainViewController">
+
+    <children>
+
+
+        <Label fx:id="lblBienvenido" layoutX="230.0" layoutY="20.0" prefHeight="63.0" prefWidth="520.0" style="-fx-text-fill: #8A6D2F;" text="BIENVENID@, &quot;PLACEHOLDER&quot;">
+            <font>
+                <Font name="Copperplate Gothic Bold" size="27.0" />
+            </font>
+        </Label>
+
+
+        <AnchorPane fx:id="contentMain" layoutX="225.0" layoutY="80.0" prefHeight="470.0" prefWidth="580.0" style="-fx-background-color: #FFFFFF;                            -fx-border-color: #D9D9D9;                            -fx-border-radius: 10;                            -fx-background-radius: 10;                            -fx-effect: dropshadow(gaussian, #C8C8C8, 10, 0.3, 0, 3);">
+        </AnchorPane>
+
+
+
+        <AnchorPane prefHeight="566.0" prefWidth="200.0" style="-fx-background-color: #F5D87C;                            -fx-border-color: #D4B45A;                            -fx-border-width: 0 2 0 0;">
+            <children>
+
+
+                <MenuButton layoutX="40.0" layoutY="14.0" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #FFFFFF;                                    -fx-background-radius: 10;                                    -fx-border-radius: 10;                                    -fx-border-color: #C1A85A;                                    -fx-border-width: 2;                                    -fx-text-fill: #8A6D2F;                                    -fx-font-weight: bold;" text="Monederos">
+                    <font>
+                        <Font name="Copperplate Gothic Bold" size="13.0" />
+                    </font>
+
+                    <items>
+                        <MenuItem fx:id="btnVerMonederos" onAction="#mostrarMonederos" text="Ver Monederos" />
+
+                        <MenuItem fx:id="btnAgregarMonedero" onAction="#AgregarMonedero" text="Agregar Monedero" />
+
+                        <MenuItem text="Otra opción por si acaso" />
+                    </items>
+                </MenuButton>
+
+
+                <Button fx:id="btnRetirar" layoutX="40.0" layoutY="75.0" onAction="#MostrarVistaRetiro" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #FFFFFF;                                -fx-background-radius: 10;                                -fx-border-radius: 10;                                -fx-border-color: #C1A85A;                                -fx-border-width: 2;                                -fx-text-fill: #8A6D2F;                                -fx-font-weight: bold;" text="Retirar" />
+
+                <Button fx:id="btnDepositar" layoutX="40.0" layoutY="133.0" onAction="#MostrarVistaDeposito" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #FFFFFF;                                -fx-background-radius: 10;                                -fx-border-radius: 10;                                -fx-border-color: #C1A85A;                                -fx-border-width: 2;                                -fx-text-fill: #8A6D2F;                                -fx-font-weight: bold;" text="Depositar" />
+
+                <Button fx:id="btnTransferir" layoutX="40.0" layoutY="195.0" onAction="#MostrarVistaTransferencia" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #FFFFFF;                                -fx-background-radius: 10;                                -fx-border-radius: 10;                                -fx-border-color: #C1A85A;                                -fx-border-width: 2;                                -fx-text-fill: #8A6D2F;                                -fx-font-weight: bold;" text="Transferir" />
+
+                <Button fx:id="btnProgramar" layoutX="40.0" layoutY="247.0" onAction="#MostrarProgramar" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #FFFFFF;                                -fx-background-radius: 10;                                -fx-border-radius: 10;                                -fx-border-color: #C1A85A;                                -fx-border-width: 2;                                -fx-text-fill: #8A6D2F;                                -fx-font-weight: bold;" text="Programar" />
+
+
+                <Button fx:id="btnLogOut" layoutX="35.0" layoutY="510.0" onAction="#LogOut" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #8A6D2F;                                -fx-background-radius: 10;                                -fx-text-fill: white;                                -fx-font-weight: bold;" text="Cerrar Sesión" />
+            <Button fx:id="btnPerfil" layoutX="40.0" layoutY="364.0" onAction="#MostrarVistaPerfil" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #FFFFFF;                                -fx-background-radius: 10;                                -fx-border-radius: 10;                                -fx-border-color: #C1A85A;                                -fx-border-width: 2;                                -fx-text-fill: #8A6D2F;                                -fx-font-weight: bold;" text="Perfil" />
+            <Button fx:id="btnPuntos" layoutX="40.0" layoutY="304.0" onAction="#MostrarPuntos" prefHeight="36.0" prefWidth="130.0" style="-fx-background-color: #FFFFFF;                                -fx-background-radius: 10;                                -fx-border-radius: 10;                                -fx-border-color: #C1A85A;                                -fx-border-width: 2;                                -fx-text-fill: #8A6D2F;                                -fx-font-weight: bold;" text="Puntos" />
+
+            </children>
+
+        </AnchorPane>
+      <ImageView fitHeight="164.0" fitWidth="200.0" layoutX="688.0" layoutY="-45.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/Logotipo_el_dorado-removebg-preview.png" />
+         </image>
+      </ImageView>
+
+    </children>
+
 </AnchorPane>

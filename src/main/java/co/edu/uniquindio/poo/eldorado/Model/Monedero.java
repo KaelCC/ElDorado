@@ -6,7 +6,7 @@ import java.util.List;
 public abstract class Monedero {
     protected String idMonedero;
     protected double saldo;
-    protected Cuenta cuenta; // 🔗 vínculo con la cuenta a la que pertenece
+    protected Cuenta cuenta;
     protected List<Transaccion> transacciones;
 
     public Monedero(String idMonedero, double saldo, Cuenta cuenta) {
@@ -18,16 +18,12 @@ public abstract class Monedero {
         this.cuenta = cuenta;
         this.transacciones = new ArrayList<>();
     }
-
-
     public void depositar(double monto) {
         if (monto <= 0) {
             throw new IllegalArgumentException("El monto debe ser mayor a 0");
         }
         saldo += monto;
     }
-
-
     public void retirar(double monto) {
         if (monto <= 0) {
             throw new IllegalArgumentException("El monto debe ser mayor a 0");
@@ -37,16 +33,12 @@ public abstract class Monedero {
         }
         saldo -= monto;
     }
-
-
     public void aumentarSaldo(double monto) {
         if (monto <= 0) {
             throw new IllegalArgumentException("El monto a aumentar debe ser mayor a 0");
         }
         saldo += monto;
     }
-
-
     public void agregarTransaccion(Transaccion transaccion) {
         if (transaccion == null) {
             throw new IllegalArgumentException("La transacción no puede ser nula");
@@ -96,4 +88,6 @@ public abstract class Monedero {
     public String toString() {
         return getTipo() + " - " + getIdMonedero();
     }
-}
+
+    }
+

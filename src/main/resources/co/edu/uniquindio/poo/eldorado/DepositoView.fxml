@@ -5,29 +5,74 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.eldorado.DepositoController">
+
+    <children>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.DepositoController">
-   <children>
-      <Label layoutX="25.0" layoutY="14.0" prefHeight="51.0" prefWidth="274.0" text="DEPOSITAR: ">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="34.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="choiceboxElegirMonedero" layoutX="300.0" layoutY="86.0" prefHeight="39.0" prefWidth="193.0" />
-      <TextField fx:id="txtCantidadDeposito" layoutX="300.0" layoutY="152.0" prefHeight="26.0" prefWidth="194.0" promptText="ingrese el monto a ingresar" />
-      <Text layoutX="14.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ingrese el monto a depositar:" wrappingWidth="295.1999877929687">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="16.0" />
-         </font>
-      </Text>
-      <Button fx:id="BtnDepositar" layoutX="311.0" layoutY="235.0" mnemonicParsing="false" onAction="#Depositar" prefHeight="39.0" prefWidth="170.0" text="Depositar" />
-      <Text layoutX="14.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="elija el monedero que quiere usar" wrappingWidth="295.1999877929687">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="16.0" />
-         </font>
-      </Text>
-   </children>
+        <VBox spacing="20" layoutX="80" layoutY="40" prefWidth="440" prefHeight="320"
+              style="-fx-background-color: #FFF4A6;
+                     -fx-background-radius: 20;
+                     -fx-padding: 25;
+                     -fx-border-color: #2B2B2B;
+                     -fx-border-width: 2;
+                     -fx-border-radius: 20;">
+
+
+            <Label text="DEPOSITAR:" textFill="#2B2B2B">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="32" />
+                </font>
+            </Label>
+
+
+            <Label text="Seleccione el monedero:" textFill="#2B2B2B">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="17" />
+                </font>
+            </Label>
+
+
+            <ChoiceBox fx:id="choiceboxElegirMonedero"
+                       prefHeight="40" prefWidth="300"
+                       style="-fx-background-color: white;
+                              -fx-background-radius: 10;
+                              -fx-border-radius: 10;
+                              -fx-border-color: #2B2B2B;" />
+
+            <Label text="Ingrese el monto a depositar:" textFill="#2B2B2B">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="17" />
+                </font>
+            </Label>
+
+
+            <TextField fx:id="txtCantidadDeposito"
+                       promptText="Monto a depositar"
+                       prefHeight="35" prefWidth="300"
+                       style="-fx-background-radius: 10;
+                              -fx-border-radius: 10;
+                              -fx-border-color: #2B2B2B;" />
+
+
+            <Button fx:id="BtnDepositar"
+                    text="DEPOSITAR"
+                    onAction="#Depositar"
+                    prefHeight="40" prefWidth="200"
+                    style="-fx-background-color: #2B2B2B;
+                           -fx-text-fill: white;
+                           -fx-background-radius: 12;
+                           -fx-font-size: 16;">
+            </Button>
+
+        </VBox>
+
+    </children>
+
 </AnchorPane>

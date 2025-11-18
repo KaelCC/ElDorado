@@ -4,22 +4,60 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.eldorado.VerMonederosController"
+            style="-fx-background-color: #f2f2f2;"> <!-- Gris claro de fondo -->
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.VerMonederosController">
-   <children>
-      <TableView fx:id="tableMonederos" layoutX="148.0" layoutY="73.0" prefHeight="302.0" prefWidth="226.0">
-        <columns>
-          <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="colTipo" prefWidth="75.0" text="TIPO" />
-            <TableColumn fx:id="colSaldo" prefWidth="75.0" text="SALDO" />
-        </columns>
-      </TableView>
-      <Label layoutX="24.0" layoutY="14.0" prefHeight="46.0" prefWidth="210.0" text="MONEDEROS: ">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="25.0" />
-         </font>
-      </Label>
-   </children>
+    <children>
+
+
+        <VBox spacing="20" layoutX="50" layoutY="40" prefWidth="500" prefHeight="320"
+              style="-fx-background-color: white;
+                     -fx-background-radius: 15;
+                     -fx-padding: 25;
+                     -fx-effect: dropshadow(gaussian, #bbbbbb, 20, 0.3, 0, 4);">
+
+
+            <Label text="MONEDEROS" textFill="#b8860b"> <!-- Dorado mate -->
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="28" />
+                </font>
+            </Label>
+
+
+            <TableView fx:id="tableMonederos" prefHeight="260"
+                       style="-fx-background-color: white;
+                              -fx-background-radius: 10;
+                              -fx-border-color: #d4af37;   /* Dorado */
+                              -fx-border-width: 2;
+                              -fx-border-radius: 10;">
+
+                <columns>
+                    <TableColumn fx:id="colId" prefWidth="160" text="ID"
+                                 style="-fx-alignment: CENTER;
+                                        -fx-font-weight: bold;
+                                        -fx-text-fill: #555;" />
+
+                    <TableColumn fx:id="colTipo" prefWidth="160" text="TIPO"
+                                 style="-fx-alignment: CENTER;
+                                        -fx-font-weight: bold;
+                                        -fx-text-fill: #555;" />
+
+                    <TableColumn fx:id="colSaldo" prefWidth="160" text="SALDO"
+                                 style="-fx-alignment: CENTER;
+                                        -fx-font-weight: bold;
+                                        -fx-text-fill: #555;" />
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </children>
+
 </AnchorPane>

@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import java.time.LocalDate;
 import java.util.UUID;
 
+
 public class TransferenciaController {
 
     private Usuario usuarioActual;
@@ -80,6 +81,9 @@ public class TransferenciaController {
             String idTransaccion = UUID.randomUUID().toString();
             Transferencia transferencia = new Transferencia(idTransaccion, LocalDate.now(), monto, origen, destino);
             transferencia.ejecutar();
+
+            Usuario usuario = elDorado.buscarUsuarioPorEmail(usuarioActual.getEmail());
+            RegistroApplication.enviarNotificacion(usuario,"Su transferencia ah sido exitoso");
 
             System.out.println("Transferencia realizada. Nuevo saldo: " + origen.getSaldo());
 

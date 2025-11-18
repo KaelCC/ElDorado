@@ -20,8 +20,11 @@ import java.io.IOException;
 public class MainViewController {
     private ElDorado elDorado;
     @FXML
+    private Button btnPuntos;
+    @FXML
     private Button btnProgramar;
-
+    @FXML
+    private Button btnPerfil;
     @FXML
     private Button btnDepositar;
     @FXML
@@ -174,6 +177,35 @@ try {
     e.printStackTrace();
         }
     }
+
+   @FXML
+    void MostrarVistaPerfil(ActionEvent event) {
+try {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("PerfilView.fxml"));
+    AnchorPane pane = loader.load();
+    PerfilController controller = loader.getController();
+    controller.setElDorado(elDorado);
+    controller.setUsuarioActual(usuarioActual);
+    contentMain.getChildren().setAll(pane);
+} catch(Exception e) {
+    e.printStackTrace();
+}
+   }
+    @FXML
+    void MostrarPuntos(ActionEvent event) {
+try {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("CanjearPuntosView.fxml"));
+    AnchorPane pane = loader.load();
+    CanjearPuntosController controller = loader.getController();
+    controller.setElDorado(elDorado);
+    controller.setUsuarioActual(usuarioActual);
+    controller.setCuentaActual(usuarioActual.getCuenta());
+    contentMain.getChildren().setAll(pane);
+} catch (Exception e) {
+    e.printStackTrace();
+}
+    }
+
 
 }
 

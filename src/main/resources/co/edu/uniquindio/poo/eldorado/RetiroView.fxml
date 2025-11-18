@@ -5,28 +5,75 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.eldorado.RetiroController">
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.eldorado.RetiroController">
-   <children>
-      <Label layoutX="46.0" layoutY="30.0" prefHeight="51.0" prefWidth="284.0" text="RETIROS">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="39.0" />
-         </font>
-      </Label>
-      <Label layoutX="6.0" layoutY="100.0" prefHeight="51.0" prefWidth="362.0" text="INGRESE EL MONEDERO DEL QUE QUIERE RETIRAR">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="12.0" />
-         </font>
-      </Label>
-      <ChoiceBox fx:id="choiceBoxMonedero" layoutX="368.0" layoutY="112.0" prefHeight="26.0" prefWidth="177.0" />
-      <TextField fx:id="txtCantidadRetiro" layoutX="368.0" layoutY="175.0" prefHeight="26.0" prefWidth="178.0" />
-      <Label layoutX="7.0" layoutY="162.0" prefHeight="51.0" prefWidth="362.0" text="ingrese el monto a retirar">
-         <font>
-            <Font name="Copperplate Gothic Bold" size="20.0" />
-         </font>
-      </Label>
-      <Button fx:id="btnRetirar" layoutX="223.0" layoutY="282.0" mnemonicParsing="false" onAction="#Retirar" prefHeight="44.0" prefWidth="154.0" text="RETIRAR" />
-   </children>
+    <children>
+
+        <!-- CONTENEDOR CENTRAL -->
+        <VBox spacing="20" layoutX="80" layoutY="40" prefWidth="440" prefHeight="320"
+              style="-fx-background-color: #FFF4A6;
+                     -fx-background-radius: 20;
+                     -fx-padding: 25;
+                     -fx-border-color: #2B2B2B;
+                     -fx-border-width: 2;
+                     -fx-border-radius: 20;">
+
+            <!-- TÍTULO -->
+            <Label text="RETIROS" textFill="#2B2B2B">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="36" />
+                </font>
+            </Label>
+
+            <!-- LABEL DE MONEDERO -->
+            <Label text="Seleccione el monedero:" textFill="#2B2B2B">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="17" />
+                </font>
+            </Label>
+
+            <!-- CHOICEBOX -->
+            <ChoiceBox fx:id="choiceBoxMonedero"
+                       prefHeight="40" prefWidth="300"
+                       style="-fx-background-color: white;
+                              -fx-background-radius: 10;
+                              -fx-border-radius: 10;
+                              -fx-border-color: #2B2B2B;" />
+
+            <!-- LABEL DE MONTO -->
+            <Label text="Ingrese el monto a retirar:" textFill="#2B2B2B">
+                <font>
+                    <Font name="Copperplate Gothic Bold" size="17" />
+                </font>
+            </Label>
+
+            <!-- TEXTFIELD -->
+            <TextField fx:id="txtCantidadRetiro"
+                       promptText="Monto a retirar"
+                       prefHeight="35" prefWidth="300"
+                       style="-fx-background-radius: 10;
+                              -fx-border-radius: 10;
+                              -fx-border-color: #2B2B2B;" />
+
+            <!-- BOTÓN -->
+            <Button fx:id="btnRetirar"
+                    text="RETIRAR"
+                    onAction="#Retirar"
+                    prefHeight="40" prefWidth="200"
+                    style="-fx-background-color: #2B2B2B;
+                           -fx-text-fill: white;
+                           -fx-background-radius: 12;
+                           -fx-font-size: 16;">
+            </Button>
+
+        </VBox>
+
+    </children>
+
 </AnchorPane>
