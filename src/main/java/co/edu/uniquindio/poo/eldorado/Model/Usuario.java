@@ -11,7 +11,7 @@ public class Usuario {
     private String telefono;
     private String cedula;
     private String password;
-    private List<Cuenta> listaCuentas;
+    private Cuenta cuenta;
 
     public Usuario(String nombre, String apellido, String email, String telefono, String cedula, int edad, String password) {
         if (nombre == null || nombre.isBlank() ||
@@ -30,7 +30,6 @@ public class Usuario {
         this.cedula = cedula;
         this.edad = edad;
         this.password = password;
-        this.listaCuentas = new ArrayList<>();
     }
 
 
@@ -90,11 +89,11 @@ public class Usuario {
         this.cedula = cedula;
     }
 
-    public List<Cuenta> getListaCuentas() {
-        return listaCuentas;
-    }
+  public Cuenta getCuenta() { return cuenta; }
 
-
+public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
+}
     public void agregarCuenta(Cuenta cuenta) {
         if (cuenta == null) {
             throw new IllegalArgumentException("La cuenta no puede ser nula");
@@ -103,12 +102,5 @@ public class Usuario {
 
     }
 
-    public Cuenta buscarCuentaPorId(String idCuenta) {
-        for (Cuenta c : listaCuentas) {
-            if (c.getIdCuenta().equals(idCuenta)) {
-                return c;
-            }
-        }
-        return null;
-    }
+
 }

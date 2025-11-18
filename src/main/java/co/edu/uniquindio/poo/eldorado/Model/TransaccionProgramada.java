@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo.eldorado.Model;
 import java.time.LocalDate;
 
 public class TransaccionProgramada {
-    private Transaccion transaccion;  // puede ser un depósito, transferencia o retiro
+    private Transaccion transaccion;
     private LocalDate fechaEjecucion;
     private boolean ejecutada;
 

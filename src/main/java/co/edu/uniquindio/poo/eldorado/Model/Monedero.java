@@ -84,11 +84,16 @@ public abstract class Monedero {
     public Cuenta getCuenta() {
         return cuenta;
     }
+    public abstract String getTipo();
 
     public void setCuenta(Cuenta cuenta) {
         if (cuenta == null) {
             throw new IllegalArgumentException("La cuenta no puede ser nula");
         }
         this.cuenta = cuenta;
+    }
+    @Override
+    public String toString() {
+        return getTipo() + " - " + getIdMonedero();
     }
 }

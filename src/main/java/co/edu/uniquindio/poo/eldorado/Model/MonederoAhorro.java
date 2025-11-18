@@ -6,7 +6,10 @@ public class MonederoAhorro extends Monedero {
         super(idMonedero, saldo, cuenta);
     }
 
-
+@Override
+public String getTipo(){
+        return "ahorro";
+}
     @Override
     public void depositar(double monto) {
         if (monto <= 0) {

@@ -24,4 +24,8 @@ public class MonederoDiario extends Monedero {
         }
         super.retirar(monto);
     }
+    @Override
+    public String getTipo() {
+        return "Diario";
+    }
 }
