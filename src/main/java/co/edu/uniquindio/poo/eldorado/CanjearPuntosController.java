@@ -3,6 +3,7 @@ package co.edu.uniquindio.poo.eldorado;
 import co.edu.uniquindio.poo.eldorado.Model.Cuenta;
 import co.edu.uniquindio.poo.eldorado.Model.ElDorado;
 import co.edu.uniquindio.poo.eldorado.Model.Usuario;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -13,6 +14,14 @@ public class CanjearPuntosController {
     private Usuario usuarioActual;
     private VerMonederosController verMonederosController;
     private ElDorado elDorado;
+    private ObservableList<Cuenta.Recompensa> recompensas;
+
+    public ObservableList<Cuenta.Recompensa> getRecompensas() {
+        return recompensas;
+    }
+    public void setRecompensas(ObservableList<Cuenta.Recompensa> recompensas) {
+        this.recompensas = recompensas;
+    }
 
     public void setElDorado(ElDorado elDorado) {
         this.elDorado = elDorado;
@@ -37,8 +46,9 @@ public class CanjearPuntosController {
 
     @FXML
     public void initialize() {
-        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         colCosto.setCellValueFactory(new PropertyValueFactory<>("costoPuntos"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colAccion.setCellValueFactory(new PropertyValueFactory<>("accion"));
 
         configurarBotonCanjeo();
     }

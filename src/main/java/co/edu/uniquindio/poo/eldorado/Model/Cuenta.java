@@ -1,5 +1,6 @@
 package co.edu.uniquindio.poo.eldorado.Model;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -126,8 +127,8 @@ public class Cuenta {
             case BRONCE:
                 lista.add(new Recompensa(
                         "Bono +$50",
-                        1000,
-                        () -> agregarDinero(50)
+                        100,
+                        () -> agregarDineroAlMonedero(5000000)
                 ));
                 break;
 
@@ -135,7 +136,7 @@ public class Cuenta {
                 lista.add(new Recompensa(
                         "Bono +$100",
                         2000,
-                        () -> agregarDinero(100)
+                        () -> agregarDineroAlMonedero(100000000)
                 ));
                 break;
 
@@ -143,7 +144,7 @@ public class Cuenta {
                 lista.add(new Recompensa(
                         "Bono +$500",
                         4500,
-                        () -> agregarDinero(500)
+                        () -> agregarDineroAlMonedero(500000000)
                 ));
                 break;
 
@@ -151,7 +152,7 @@ public class Cuenta {
                 lista.add(new Recompensa(
                         "Bono +$1000",
                         10000,
-                        () -> agregarDinero(1000)
+                        () -> agregarDineroAlMonedero(900000000)
                 ));
                 break;
         }
@@ -162,6 +163,18 @@ public class Cuenta {
     private void agregarDinero(double cantidad) {
         System.out.println("Se agregaron $" + cantidad + " al usuario.");
     }
+    public void agregarDineroAlMonedero(double cantidad) {
+        if (listaMonederos.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "El usuario no tiene monederos .");
+            return;
+        }
+
+        Monedero monedero = listaMonederos.get(0); // ← El primer monedero
+        monedero.agregarDinero(cantidad);
+
+        System.out.println("Se agregaron $" + cantidad + " al monedero " + monedero.getIdMonedero());
+    }
+
 
 
 }

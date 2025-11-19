@@ -8,6 +8,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -133,14 +134,14 @@ public class TransaccionProgramadaController {
                 tp.ejecutarSiCorresponde(LocalDate.now());
             }
 
-            System.out.println("Transacción programada para: " + fecha);
+            JOptionPane.showMessageDialog(null, "se programo una transaccion para" + fecha);
 
             if (verMonederosController != null) {
                 verMonederosController.actualizarTabla();
             }
 
         } catch (NumberFormatException e) {
-            System.out.println("Ingrese un monto válido");
+          JOptionPane.showMessageDialog(null, "seleccione una cantidad valida");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }

@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -47,7 +48,7 @@ public class RetiroController {
     void Retirar(ActionEvent event) {
         Monedero seleccionado = choiceBoxMonedero.getValue();
         if (seleccionado == null) {
-            System.out.println("Debe seleccionar un monedero");
+            JOptionPane.showMessageDialog(null, "seleccione un monedero");
             return;
         }
 
@@ -63,7 +64,7 @@ public class RetiroController {
             System.out.println("Retiro realizado. Nuevo saldo: " + seleccionado.getSaldo());
 
         } catch (NumberFormatException e) {
-            System.out.println("Ingrese un monto válido");
+           JOptionPane.showMessageDialog(null, "ingrese un monto valido");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }

@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class LoginController {
@@ -37,14 +38,14 @@ public class LoginController {
         Usuario usuario = elDorado.buscarUsuarioPorEmail(email);
 
         if (usuario == null) {
-            System.out.println("Usuario no encontrado o no existe, revise los datos o regístrese.");
+            JOptionPane.showMessageDialog(null, "usuario no encontrado");
             return;
         }
 
         if (usuario.getPassword().equals(password)) {
             System.out.println("Inicio de sesión exitoso. Bienvenido " + usuario.getNombre());
         } else {
-            System.out.println("Contraseña incorrecta.");
+           JOptionPane.showMessageDialog(null, "contraseña incorrecta");
             return;
         }
 

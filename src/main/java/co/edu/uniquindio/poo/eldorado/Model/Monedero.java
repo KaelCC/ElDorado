@@ -89,5 +89,9 @@ public abstract class Monedero {
         return getTipo() + " - " + getIdMonedero();
     }
 
+    void agregarDinero(double cantidad) {
+        System.out.println("Se agregaron $" + cantidad + " al usuario.");
+    }
+
     }
 

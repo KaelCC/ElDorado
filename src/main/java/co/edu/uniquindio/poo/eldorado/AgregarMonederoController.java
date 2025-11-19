@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 
 import javax.print.attribute.SetOfIntegerSyntax;
 import javax.sound.midi.Soundbank;
+import javax.swing.*;
 import java.sql.SQLOutput;
 
 
@@ -37,7 +38,7 @@ public class AgregarMonederoController {
     void AgregarMonedero(ActionEvent event) {
 
         if (choiceTipoMonedero == null) {
-            System.out.println("Debe seleccionar un tipo de monedero.");
+           JOptionPane.showMessageDialog(null, "ingrese un tipo de monedero");
             return;
         }
 
@@ -49,11 +50,11 @@ public class AgregarMonederoController {
        if(choiceTipoMonedero.getValue().equals("Ahorro")){
          nuevo = new MonederoAhorro(id, 0, usuarioActual.getCuenta() );
 
-         System.out.println("se creo una cuenta de ahorro");
+        JOptionPane.showMessageDialog(null, "se creo un monedero de ahorro");
 
        } else if (choiceTipoMonedero.getValue().equals("Diario")){
          nuevo = new MonederoDiario(id, 0, usuarioActual.getCuenta() );
-           System.out.println("se creo una cuenta de gasto diario");
+          JOptionPane.showMessageDialog(null, "se creo un monedero gasto diario");
        }
         usuarioActual.getCuenta().agregarMonedero(nuevo);
 

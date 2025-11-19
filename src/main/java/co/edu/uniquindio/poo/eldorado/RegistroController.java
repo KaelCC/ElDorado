@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import javax.swing.*;
 import java.io.IOException;
 
 public class RegistroController {
@@ -54,7 +56,9 @@ public class RegistroController {
         String telefono = txttelefono.getText();
         String password = txtPassword.getText();
         int edad = Integer.parseInt(txtEdad.getText());
-
+if (!email.contains("@")){
+    JOptionPane.showMessageDialog(null, "el correo debe tener un @");
+}
         Usuario usuario = new Usuario(nombre, apellido, email, telefono, cedula, edad, password);
         elDorado.registrarUsuario(usuario);
         System.out.println("Usuario registrado");

@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -59,7 +60,7 @@ public class TransferenciaController {
     void Transferir(ActionEvent event) {
         Monedero origen = choiceBoxMonedero.getValue();
         if (origen == null) {
-            System.out.println("Debe seleccionar un monedero de origen");
+          JOptionPane.showMessageDialog(null, "debe seleccionar un monedero de origen");
             return;
         }
 
@@ -72,7 +73,7 @@ public class TransferenciaController {
             String idCuentaDestino = txtDestino.getText();
             Cuenta cuentaDestino = elDorado.buscarCuentaPorId(idCuentaDestino);
             if (cuentaDestino == null) {
-                System.out.println("No existe una cuenta con esa cédula");
+                JOptionPane.showMessageDialog(null, "Debe seleccionar un cuenta de destino");
                 return;
             }
 

@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -44,7 +45,7 @@ private ElDorado elDorado;
     void Depositar(ActionEvent event) {
         Monedero seleccionado = choiceboxElegirMonedero.getValue();
         if (seleccionado == null) {
-            System.out.println("Debe seleccionar un monedero");
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un monedero");
             return;
         }
 
@@ -70,7 +71,7 @@ private ElDorado elDorado;
             }
 
         } catch (NumberFormatException e) {
-            System.out.println("Ingrese un monto válido");
+            JOptionPane.showMessageDialog(null, "seleccione una cantidad valida");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
